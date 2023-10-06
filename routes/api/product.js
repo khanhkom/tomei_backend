@@ -41,7 +41,7 @@ router.get('/item/:slug', async (req, res) => {
     );
 
     const hasNoBrand =
-      productDoc?.brand === null || productDoc?.brand?.isActive === false;
+      productDoc.brand === null || productDoc?.brand?.isActive === false;
 
     if (!productDoc || hasNoBrand) {
       return res.status(404).json({
